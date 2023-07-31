@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('app_name');
+            $table->string('mobile');
+            $table->string('email');
+            $table->string('logo_header');
+            $table->string('logo_footer');
+            $table->string('footer_text');
             $table->timestamps();
         });
     }

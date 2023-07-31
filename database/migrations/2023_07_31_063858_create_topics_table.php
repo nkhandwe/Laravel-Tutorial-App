@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->bigInteger('subcategory_id')->unsigned();
+            $table->foreign('subcategory_id')->references('id')->on('sub_categories');
+            $table->string('slug');
+            $table->string('image');
             $table->timestamps();
         });
     }
