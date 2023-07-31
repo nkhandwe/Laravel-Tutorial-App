@@ -11,7 +11,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin-views.sub-category.index');
     }
 
     /**

@@ -11,7 +11,7 @@ class TopicContoller extends Controller
      */
     public function index()
     {
-        //
+        return view('admin-views.topics.index');
     }
 
     /**
