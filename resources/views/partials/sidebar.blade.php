@@ -34,138 +34,10 @@
                      </a>
 
                  </li>
-                 {{-- <li class="menu">
-                     <a href="#app" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                         <div class="">
-                             <i class="lab la-medapps"></i>
-                             <span>Apps</span>
-                         </div>
-                         <div>
-                             <i class="las la-angle-right sidemenu-right-icon"></i>
-                         </div>
-                     </a>
-                     <ul class="collapse submenu list-unstyled" id="app" data-parent="#accordionExample">
-                         <li>
-                             <a href="apps_calendar.html"> Calendar </a>
-                         </li>
-                         <li>
-                             <a href="apps_chat.html"> Chat </a>
-                         </li>
-                         <li>
-                             <a href="#pages-companies" data-toggle="collapse" aria-expanded="false"
-                                 class="dropdown-toggle"> Companies <i
-                                     class="las la-angle-right sidemenu-right-icon"></i> </a>
-                             <ul class="collapse list-unstyled sub-submenu" id="pages-companies" data-parent="#pages">
-                                 <li>
-                                     <a href="apps_companies.html"> List </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_company_details.html"> Company Details </a>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li>
-                             <a href="apps_contacts.html"> Contacts </a>
-                         </li>
-                         <li>
-                             <a href="#pages-ecommerce" data-toggle="collapse" aria-expanded="false"
-                                 class="dropdown-toggle"> Ecommerce <i
-                                     class="las la-angle-right sidemenu-right-icon"></i> </a>
-                             <ul class="collapse list-unstyled sub-submenu" id="pages-ecommerce" data-parent="#pages">
-                                 <li>
-                                     <a href="apps_ecommerce.html"> Dashboard </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_products.html"> Products </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_product_details.html"> Product Details </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_add_product.html"> Add Product </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_orders.html"> Orders </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_order_details.html"> Order Details </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_customers.html"> Customers </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_sellers.html"> Sellers </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_cart.html"> Cart </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ecommerce_checkout.html"> Checkout </a>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li>
-                             <a href="#pages-email" data-toggle="collapse" aria-expanded="false"
-                                 class="dropdown-toggle"> Email <i class="las la-angle-right sidemenu-right-icon"></i>
-                             </a>
-                             <ul class="collapse list-unstyled sub-submenu" id="pages-email" data-parent="#pages">
-                                 <li>
-                                     <a href="apps_mail.html"> Inbox </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_mail_details.html"> Email Details </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_mail_create.html"> Compose Email </a>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li>
-                             <a href="apps_file_manager.html"> File Manager </a>
-                         </li>
-                         <li>
-                             <a href="apps_invoice.html"> Invoice List </a>
-                         </li>
-                         <li>
-                             <a href="#pages-notes" data-toggle="collapse" aria-expanded="false"
-                                 class="dropdown-toggle"> Notes <i class="las la-angle-right sidemenu-right-icon"></i>
-                             </a>
-                             <ul class="collapse list-unstyled sub-submenu" id="pages-notes" data-parent="#pages">
-                                 <li>
-                                     <a href="apps_notes.html"> List </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_notes_details.html"> Notes Details </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_notes_create.html"> Create Note </a>
-                                 </li>
-                             </ul>
-                         </li>
-                         <li>
-                             <a href="apps_social.html"> Social </a>
-                         </li>
-                         <li>
-                             <a href="apps_taskList.html"> Task List </a>
-                         </li>
-                         <li>
-                             <a href="#pages-error" data-toggle="collapse" aria-expanded="false"
-                                 class="dropdown-toggle"> Tickets <i
-                                     class="las la-angle-right sidemenu-right-icon"></i> </a>
-                             <ul class="collapse list-unstyled sub-submenu" id="pages-error" data-parent="#pages">
-                                 <li>
-                                     <a href="apps_tickets.html"> Ticket List </a>
-                                 </li>
-                                 <li>
-                                     <a href="apps_ticket_details.html"> Ticket Details </a>
-                                 </li>
-                             </ul>
-                         </li>
-                     </ul>
-                 </li> --}}
+                 
                  <li class="menu-title"></li>
                  <li class="menu">
-                     <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                     <a href="#category" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                          <div class="">
                              <i class="las la-list"></i>
                              <span>Category</span>
@@ -174,17 +46,17 @@
                              <i class="las la-angle-right sidemenu-right-icon"></i>
                          </div>
                      </a>
-                     <ul class="collapse submenu list-unstyled" id="pages" data-parent="#accordionExample">
+                     <ul class="collapse submenu list-unstyled" id="category" data-parent="#accordionExample">
                          <li>
-                             <a href="{{ route('category') }}"> Add New </a>
+                             <a href="{{ route('admin.category.category') }}"> Add New </a>
                          </li>
                          <li>
-                             <a href="pages_coming_soon_2.html"> List</a>
+                             <a href="{{ route('admin.category.list') }}"> List</a>
                          </li>
                      </ul>
                  </li>
                  <li class="menu">
-                     <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                     <a href="#sub-category" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                          <div class="">
                              <i class="las la-code"></i>
                              <span>Sub Category</span>
@@ -193,12 +65,12 @@
                              <i class="las la-angle-right sidemenu-right-icon"></i>
                          </div>
                      </a>
-                     <ul class="collapse submenu list-unstyled" id="pages" data-parent="#accordionExample">
+                     <ul class="collapse submenu list-unstyled" id="sub-category" data-parent="#accordionExample">
                          <li>
-                             <a href="pages_coming_soon.html"> Add New </a>
+                             <a href="{{ route('admin.sub-category.sub-category') }}"> Add New </a>
                          </li>
                          <li>
-                             <a href="pages_coming_soon_2.html"> List</a>
+                             <a href="{{ route('admin.sub-category.list') }}"> List</a>
                          </li>
                      </ul>
                  </li>
@@ -235,7 +107,7 @@
                      </a>
                      <ul class="collapse submenu list-unstyled" id="elements" data-parent="#accordionExample">
                          <li>
-                             <a href="{{ route('category') }}"> Add New </a>
+                             <a href=""> Add New </a>
                          </li>
                          <li>
                              <a href="ui_elements_avatar.html"> List </a>
@@ -376,7 +248,7 @@
                  <li class="nav-item dropdown user-profile-dropdown">
                      <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         <img src="assets/img/profile-16.jpg" alt="avatar">
+                         <img src="{{ url('assets/img/profile-16.jpg') }}" alt="avatar">
                      </a>
                      <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                          <div class="nav-drop is-account-dropdown">
@@ -390,7 +262,7 @@
                                              <div class="media-left">
                                                  <div class="image">
                                                      <img class="rounded-circle avatar-xs"
-                                                         src="assets/img/profile-16.jpg" alt="">
+                                                         src="{{ url('assets/img/profile-16.jpg') }}" alt="">
                                                  </div>
                                              </div>
                                              <div class="media-content ml-2">
@@ -417,14 +289,7 @@
                                              </div>
                                          </div>
                                      </a>
-                                     <a class="account-item" href="auth_lock_screen_3.html">
-                                         <div class="media align-center">
-                                             <i class="las la-lock font-20"></i>
-                                             <div class="media-content ml-3">
-                                                 <h6 class="font-13 mb-0 strong">Lock Screen</h6>
-                                             </div>
-                                         </div>
-                                     </a>
+
                                      <a class="account-item" href="auth_login_3.html">
                                          <div class="media align-center">
                                              <i class="las la-sign-out-alt font-20"></i>

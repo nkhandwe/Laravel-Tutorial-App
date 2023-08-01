@@ -22,6 +22,14 @@ Route::get('/login', 'LoginController@index');
         Route::get('/dashboard', 'LoginController@dashboard')->name('dashboard');
     Route::prefix('category')->name('category.')->group(function () {
         Route::get('/', 'CategoryController@index')->name('category');
+        Route::get('/list', 'CategoryController@list')->name('list');
+        Route::post('/add', 'CategoryController@create')->name('add');
       });
+    Route::prefix('sub-category')->name('sub-category.')->group(function () {
+        Route::get('/', 'SubCategoryController@index')->name('sub-category');
+        Route::get('/list', 'SubCategoryController@list')->name('list');
+        Route::post('/add', 'SubCategoryController@create')->name('add');
+      });
+
 
 });

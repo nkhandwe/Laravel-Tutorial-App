@@ -2,61 +2,68 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        return view('admin-views.sub-category.index');
+        $category = Category::all();
+        return view('admin-views.sub-category.index', compact('category'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+   
+    public function create(Request $request)
     {
-        //
+        $subcate = new SubCategory();
+        $subcate->name = $request->name;
+        $subcate->category_id = $request->category_id;
+        $subcate->slug = $request->slug;
+        $image = time() . 'image' . '.' . $request->image->extension();
+        $request->image->move(public_path('sub-category'), $image);
+        $subcate->image = $image;
+        $result = $subcate->save();
+        if($result){
+            return redirect(route('admin.sub-category.list'));
+        }else{ 
+            
+        }
+
+
+    }
+    public function list(){
+        $subcate = SubCategory::with('category')->get();
+        return view('admin-views.sub-category.list', compact('subcate'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+   
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(string $id)
     {
         //

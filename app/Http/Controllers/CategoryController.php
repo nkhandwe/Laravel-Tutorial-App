@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,12 +15,27 @@ class CategoryController extends Controller
      return view('admin-views.category.index');
     }
 
+    public function list(){
+        $category = Category::all();
+        return view('admin-views.category.list', compact('category'));
+    }
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $category = new Category();
+        $category->name = $request->name; 
+        $category->slug = $request->slug;
+        $image = time() . 'image' . '.' . $request->image->extension();
+        $request->image->move(public_path('category'), $image);
+        $category->image = $image;
+        $result = $category->save();
+        if($result){
+            return redirect(route('admin.category.list'));
+        }else{
+            
+        }
     }
 
     /**
