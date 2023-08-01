@@ -14,18 +14,18 @@
          </div>
          <nav id="sidebar">
              <ul class="navbar-item theme-brand flex-row  text-center">
-                 <li class="nav-item theme-logo">
+                 {{-- <li class="nav-item theme-logo">
                      <a href="index.html">
                          <img src="assets/img/logo.png" class="navbar-logo" alt="logo">
                      </a>
-                 </li>
+                 </li> --}}
                  <li class="nav-item theme-text">
-                     <a href="index.html" class="nav-link"> Learning App </a>
+                     <a href="" class="nav-link"> Learning App </a>
                  </li>
              </ul>
              <ul class="list-unstyled menu-categories" id="accordionExample">
                  <li class="menu">
-                     <a href="/dashboard" data-active="true" data-toggle="collapse" aria-expanded="true"
+                     <a href="/" data-active="true" data-toggle="collapse" aria-expanded="true"
                          class="dropdown-toggle">
                          <div class="">
                              <i class="las la-home"></i>
@@ -165,34 +165,28 @@
                  </li> --}}
                  <li class="menu-title"></li>
                  <li class="menu">
-                     <a href="#authentication" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                     <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                          <div class="">
-                             <i class="las la-lock"></i>
+                             <i class="las la-list"></i>
                              <span>Category</span>
                          </div>
                          <div>
                              <i class="las la-angle-right sidemenu-right-icon"></i>
-                             <span class="menu-badge badge-danger">New</span>
                          </div>
                      </a>
-                     <ul class="collapse submenu list-unstyled" id="authentication" data-parent="#accordionExample">
+                     <ul class="collapse submenu list-unstyled" id="pages" data-parent="#accordionExample">
                          <li>
-                             <a href="#pages-auth-one" data-toggle="collapse" aria-expanded="false"
-                                 class="dropdown-toggle"> Add New <i class="las la-angle-right sidemenu-right-icon"></i>
-                             </a>
-                             <ul class="collapse list-unstyled sub-submenu" id="pages-auth-one" data-parent="#pages">
-                                 <li>
-                                     <a href="auth_login_1.html"> List</a>
-                                 </li>
-
-                             </ul>
+                             <a href="{{ route('category') }}"> Add New </a>
+                         </li>
+                         <li>
+                             <a href="pages_coming_soon_2.html"> List</a>
                          </li>
                      </ul>
                  </li>
                  <li class="menu">
                      <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                          <div class="">
-                             <i class="las la-file"></i>
+                             <i class="las la-code"></i>
                              <span>Sub Category</span>
                          </div>
                          <div>
@@ -241,7 +235,7 @@
                      </a>
                      <ul class="collapse submenu list-unstyled" id="elements" data-parent="#accordionExample">
                          <li>
-                             <a href="ui_elements_alerts.html"> Add New </a>
+                             <a href="{{ route('category') }}"> Add New </a>
                          </li>
                          <li>
                              <a href="ui_elements_avatar.html"> List </a>

@@ -17,4 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', 'LoginController@index');
-Route::get('/dashboard', 'LoginController@dashboard');
+// Route::group(['middleware' => ['auth']], function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/dashboard', 'LoginController@dashboard')->name('dashboard');
+    Route::prefix('category')->name('category.')->group(function () {
+        Route::get('/', 'CategoryController@index')->name('category');
+      });
+
+});
