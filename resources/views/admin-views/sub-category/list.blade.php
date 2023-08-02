@@ -84,16 +84,15 @@
                                         <td>{{ $subcate->category->name }}</td>
                                         <td>{{ $subcate->created_at }}</td>
 
-
                                         <td><span class="badge badge-success"> Active </span></td>
 
                                         <td>
                                             <div class="d-flex">
                                                 <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary"
                                                     title="" data-original-title="Edit"><i class="las la-pen"></i></a>
-                                                <a href="javascript:void(0);" class="bs-tooltip font-20 ml-2 text-danger"
-                                                    title="" data-original-title="Delete"><i
-                                                        class="las la-trash"></i></a>
+                                                <a href="{{ route('admin.sub-category.delete', $subcate->id) }}"
+                                                    class="bs-tooltip font-20 ml-2 text-danger" title=""
+                                                    data-original-title="Delete"><i class="las la-trash"></i></a>
                                             </div>
                                         </td>
                                 </tr>

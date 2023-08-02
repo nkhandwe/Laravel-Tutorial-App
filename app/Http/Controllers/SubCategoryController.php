@@ -40,32 +40,16 @@ class SubCategoryController extends Controller
     }
 
     
-    public function store(Request $request)
-    {
-        //
-    }
-
-    
-    public function show(string $id)
-    {
-        //
-    }
-
-   
-    public function edit(string $id)
-    {
-        //
-    }
-
-    
     public function update(Request $request, string $id)
     {
-        //
+        return view('admin-views.sub-category.edit');
     }
 
    
     public function destroy(string $id)
     {
-        //
+        $subcate = SubCategory::find($id);
+        $subcate->delete();
+        return redirect()->back();
     }
 }

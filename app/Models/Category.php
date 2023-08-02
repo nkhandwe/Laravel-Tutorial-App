@@ -10,6 +10,15 @@ class Category extends Model
     use HasFactory;
       public function subCategory()
       {
-      return $this->hasMany(SubCategory::class);
+      return $this->hasMany(SubCategory::class, 'category_id');
       }
+      public function topics()
+      {
+      return $this->hasMany(Topic::class);
+      }
+      public function posts()
+      {
+      return $this->hasMany(Posts::class);
+      }
+
 }

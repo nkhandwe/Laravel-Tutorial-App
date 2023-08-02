@@ -34,7 +34,7 @@
                      </a>
 
                  </li>
-                 
+
                  <li class="menu-title"></li>
                  <li class="menu">
                      <a href="#category" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -87,10 +87,10 @@
                      </a>
                      <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
                          <li>
-                             <a href="basic_ui_accordion.html"> Add New </a>
+                             <a href="{{ route('admin.topic.topic') }}"> Add New </a>
                          </li>
                          <li>
-                             <a href="basic_ui_animation.html"> List </a>
+                             <a href="{{ route('admin.topic.list') }}"> List </a>
                          </li>
 
                      </ul>
@@ -107,16 +107,16 @@
                      </a>
                      <ul class="collapse submenu list-unstyled" id="elements" data-parent="#accordionExample">
                          <li>
-                             <a href=""> Add New </a>
+                             <a href="{{ route('admin.post.post') }}"> Add New </a>
                          </li>
                          <li>
-                             <a href="ui_elements_avatar.html"> List </a>
+                             <a href="{{ route('admin.post.list') }}"> List </a>
                          </li>
 
                      </ul>
                  </li>
                  <li class="menu">
-                     <a href="widgets.html" aria-expanded="false" class="dropdown-toggle">
+                     <a href="{{ route('admin.settings') }}" aria-expanded="false" class="dropdown-toggle">
                          <div class="">
                              <i class="las la-desktop"></i>
                              <span>Web Settings</span>

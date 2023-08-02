@@ -86,9 +86,9 @@
                                             <div class="d-flex">
                                                 <a href="javascript:void(0);" class="bs-tooltip font-20 text-primary"
                                                     title="" data-original-title="Edit"><i class="las la-pen"></i></a>
-                                                <a href="javascript:void(0);" class="bs-tooltip font-20 ml-2 text-danger"
-                                                    title="" data-original-title="Delete"><i
-                                                        class="las la-trash"></i></a>
+                                                <a href="{{ route('admin.category.delete', $category->id) }}"
+                                                    class="bs-tooltip font-20 ml-2 text-danger" title=""
+                                                    data-original-title="Delete"><i class="las la-trash"></i></a>
                                             </div>
                                         </td>
                                 </tr>
@@ -100,6 +100,4 @@
                 </div>
             </div>
         </div>
-
-       
-@endsection
+    @endsection

@@ -2,63 +2,56 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class TopicContoller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        return view('admin-views.topics.index');
+        $category = Category::all();
+        $subcate = SubCategory::all();
+        
+        return view('admin-views.topics.index', compact('category', 'subcate'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function list(){
+        $topic = Topic::with('category','subcategory')->get();
+        return view('admin-views.topics.list', compact('topic'));
+    }
+    
+    public function create(Request $request)
     {
-        //
+        $topic = new Topic();
+        $topic->name = $request->name;
+        $topic->category_id = $request->category_id;
+        $topic->subcategory_id = $request->subcategory_id;
+        $topic->slug = $request->slug;
+        $image = time() . 'image' . '.' . $request->image->extension();
+        $request->image->move(public_path('topic'), $image);
+        $topic->image = $image;
+        $result = $topic->save();
+        if($result){
+        return redirect(route('admin.topic.list'));
+        }else{
+
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
+   
     public function update(Request $request, string $id)
     {
-        //
+        return view('admin-views.topics.edit');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(string $id)
     {
-        //
+        $topic = Topic::find($id);
+        $topic->delete();
+        return redirect()->back();
     }
 }

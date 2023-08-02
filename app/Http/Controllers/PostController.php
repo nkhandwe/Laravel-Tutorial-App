@@ -2,63 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Posts;
+use App\Models\SubCategory;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        return view('admin-views.posts.index');
+        $category  = Category::all();
+        $subcate = SubCategory::all();
+        $topic = Topic::all();
+        return view('admin-views.posts.index', compact('category', 'subcate', 'topic'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+  
+    public function create(Request $request)
     {
-        //
-    }
+        $post = new Posts();
+        $post->name = $request->name;
+        $post->slug = $request->slug;
+        $post->content = $request->content;
+        $post->category_id = $request->category_id;
+        $post->subcategory_id = $request->subcategory_id;
+        $post->topic_id = $request->topic_id;
+        $image = time() . 'image' . '.' . $request->image->extension();
+        $request->image->move(public_path('post'), $image);
+        $post->image = $image;
+        $result =  $post->save();
+        if($result){
+            return redirect(route('admin.post.list'));
+        }else{
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+        }
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function list(){
+        $post = Posts::with('category', 'subcategory', 'topic')->get();
+        return view('admin-views.posts.list', compact('post'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        return view('admin-views.posts.edit');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(string $id)
     {
-        //
+        $post = Posts::find($id);
+        $post->delete();
+        return redirect()->back();
     }
 }

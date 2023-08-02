@@ -16,7 +16,12 @@
   </div>
 
 
-
+  <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.ckeditor').ckeditor();
+      });
+  </script>
   <!-- Common Script Starts -->
   <script src="{{ url('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
   <script src="{{ url('bootstrap/js/popper.min.js') }}"></script>
